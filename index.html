@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75-Day Hard Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>75-Day Hard Challenge</h1>
+            <div class="header-stats">
+                <div class="stat">
+                    <span class="stat-number" id="currentDay">0</span>
+                    <span class="stat-label">Current Day</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="daysLeft">75</span>
+                    <span class="stat-label">Days Left</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="streak">0</span>
+                    <span class="stat-label">Current Streak</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Setup Section -->
+        <div id="setupSection" class="setup-section">
+            <h2>Setup Your Challenge</h2>
+            <div class="setup-form">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" />
+                <button id="startChallenge" class="btn-primary">Start Challenge</button>
+            </div>
+        </div>
+
+        <!-- Main Tracker -->
+        <div id="trackerSection" class="tracker-section" style="display: none;">
+            <!-- Navigation -->
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="daily">Daily Tracker</button>
+                <button class="tab-btn" data-tab="calendar">Calendar View</button>
+                <button class="tab-btn" data-tab="progress">Progress</button>
+            </nav>
+
+            <!-- Daily Tracker Tab -->
+            <div id="dailyTab" class="tab-content active">
+                <div class="daily-header">
+                    <h2>Day <span id="dayNumber">1</span></h2>
+                    <div class="date-display" id="currentDate"></div>
+                </div>
+
+                <div class="tasks-grid">
+                    <div class="task-item" data-task="workout12">
+                        <div class="task-info">
+                            <h3>Morning 12-min Workout</h3>
+                            <p>Rotation-based workout</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="workout12" />
+                            <label for="workout12"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="intense">
+                        <div class="task-info">
+                            <h3>Intense Workout</h3>
+                            <p>Main workout session</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="intense" />
+                            <label for="intense"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="steps">
+                        <div class="task-info">
+                            <h3>10,000 Steps</h3>
+                            <p>Daily step goal</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="steps" />
+                            <label for="steps"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="water">
+                        <div class="task-info">
+                            <h3>9 Glasses of Water</h3>
+                            <p>Stay hydrated</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="water" />
+                            <label for="water"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="calories">
+                        <div class="task-info">
+                            <h3>1300/1500 Calories</h3>
+                            <p>Calorie target</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="calories" />
+                            <label for="calories"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="nocheat">
+                        <div class="task-info">
+                            <h3>No Cheat Food</h3>
+                            <p>No sugar, sweets, junk, outside food</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="nocheat" />
+                            <label for="nocheat"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="dsa">
+                        <div class="task-info">
+                            <h3>6 Hours DSA</h3>
+                            <p>Data Structures & Algorithms</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="dsa" />
+                            <label for="dsa"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="webdev">
+                        <div class="task-info">
+                            <h3>2 Hours Web Dev</h3>
+                            <p>Web Development Practice</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="webdev" />
+                            <label for="webdev"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="aptitude">
+                        <div class="task-info">
+                            <h3>2 Hours Aptitude + Core</h3>
+                            <p>Until June 17</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="aptitude" />
+                            <label for="aptitude"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="video">
+                        <div class="task-info">
+                            <h3>1-min Video</h3>
+                            <p>Communication practice</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="video" />
+                            <label for="video"></label>
+                        </div>
+                    </div>
+
+                    <div class="task-item" data-task="meditation">
+                        <div class="task-info">
+                            <h3>Meditation</h3>
+                            <p>Mindfulness practice</p>
+                        </div>
+                        <div class="task-toggle">
+                            <input type="checkbox" id="meditation" />
+                            <label for="meditation"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra Notes Section -->
+                <div class="extra-section">
+                    <h3>Extra Notes</h3>
+                    <textarea id="extraNotes" placeholder="Add any extra notes or tasks for today..."></textarea>
+                </div>
+
+                <!-- Day Navigation -->
+                <div class="day-navigation">
+                    <button id="prevDay" class="btn-secondary">← Previous Day</button>
+                    <button id="nextDay" class="btn-secondary">Next Day →</button>
+                </div>
+            </div>
+
+            <!-- Calendar Tab -->
+            <div id="calendarTab" class="tab-content">
+                <div class="calendar-header">
+                    <h2>75-Day Calendar Overview</h2>
+                </div>
+                <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
+
+            <!-- Progress Tab -->
+            <div id="progressTab" class="tab-content">
+                <div class="progress-overview">
+                    <h2>Overall Progress</h2>
+                    <div class="progress-stats">
+                        <div class="progress-item">
+                            <h3>Overall Completion</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="overallProgress"></div>
+                            </div>
+                            <span id="overallPercentage">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-progress">
+                        <h3>Task-wise Progress</h3>
+                        <div id="taskProgressBars"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <div class="reset-section">
+                <button id="resetChallenge" class="btn-danger">Reset Challenge</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
